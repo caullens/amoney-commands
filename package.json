@@ -1,0 +1,17 @@
+{
+  "name": "party",
+  "version": "1.0.0",
+  "description": "party command for Nightbot",
+  "main": "server.js",
+  "dependencies": {
+    "tmi": "^2.0.0",
+    "tmi.js": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
