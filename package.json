@@ -4,10 +4,16 @@
   "description": "party command for Nightbot",
   "main": "server.js",
   "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
     "tmi": "^2.0.0",
     "tmi.js": "^1.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
