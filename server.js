@@ -23,10 +23,33 @@ app.get('/chat-commands/v1/random-mod', async (req, res) => {
       });
       return;
     }
-    res.json(moderators[Math.floor(Math.random() * moderators.length)]);
+    res.send(moderators[Math.floor(Math.random() * moderators.length)]);
   } catch (error) {
     res.status(500).json(error);
   }
+});
+
+app.get('/chat-commands/v1/hype', (req, res) => {
+  const { amount, emote } = req.query;
+  if (!amount || !emote) {
+    res.status(400).json({
+      message: 'Must specify an amount and emote'
+    });
+    return;
+  }
+  const number = parseInt(amount);
+  if(isNaN(number) || number < 0) {
+    res.send('Give me a number between 1 and 99, bro');
+    return;
+  }
+  if(number > 99) {
+    res.send('Woah man, that is too much hype for me');
+    return;
+  }
+  const result = Array.from({length: number}).reduce(string => {
+    return string = string + emote + ' ';
+  }, '');
+  res.send(result);
 });
 
 app.listen(port);
